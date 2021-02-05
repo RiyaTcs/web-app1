@@ -59,7 +59,7 @@ app.get("/", async (req, res) => {
  } catch (err) {
    next(err);
  }
-// });
+});
   res.render("home", {
     user: req.oidc && req.oidc.user,
     total: expenses.reduce((accum, expense) => accum + expense.value, 0),
@@ -90,8 +90,7 @@ app.get("/expenses", requiresAuth(), async (req, res, next) => {
    } catch (err) {
      next(err);
    }
-//  });
-// app.get("/expenses", requiresAuth(), async (req, res, next) => {
+ });
   res.render("expenses", {
     user: req.oidc && req.oidc.user,
     expenses,
